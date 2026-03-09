@@ -37,11 +37,15 @@ function displayIssues(issues) {
         card.className =
             `bg-white border-t-4 ${borderColor} rounded-lg shadow p-4 cursor-pointer`
 
+        let statusIcon = issue.status === "open"
+        ? '<img src="assets/Open-Status.png" class="w-6 h-6">'
+        : '<img src="assets/ClosedStatus.png" class="w-6 h-6">';
+
         card.innerHTML = `
 
 <div class="flex justify-between items-center mb-2">
 
-<span class="text-green-500 text-xl">✔</span>
+${statusIcon}
 
 <span class="text-xs px-3 py-1 rounded-full
 ${issue.priority === "high"
@@ -95,8 +99,6 @@ HELP WANTED
     })
 
 }
-
-// Filter
 
 function filterIssues(status) {
 
