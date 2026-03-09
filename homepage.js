@@ -149,23 +149,6 @@ async function searchIssue() {
 
 }
 
-
-// function openModal(issue) {
-
-//     document.getElementById("issueModal").classList.remove("hidden")
-
-//     document.getElementById("modalTitle").innerText = issue.title
-
-//     document.getElementById("modalDescription").innerText = issue.description
-
-//     document.getElementById("modalAuthor").innerText = "Author: " + issue.author
-
-//     document.getElementById("modalCategory").innerText = "Category: " + issue.category
-
-//     document.getElementById("modalPriority").innerText = "Priority: " + issue.priority
-
-// }
-
 function openModal(issue) {
 
     document.getElementById("issueModal").classList.remove("hidden")
@@ -193,9 +176,7 @@ BUG
 HELP WANTED
 </span>
 `
-
 }
-
 
 function closeModal() {
 
