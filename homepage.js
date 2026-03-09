@@ -60,8 +60,8 @@ function displayIssues(issues) {
             `bg-white border-t-4 ${borderColor} rounded-lg shadow p-4 cursor-pointer`
 
         let statusIcon = issue.status === "open"
-        ? '<img src="assets/Open-Status.png" class="w-6 h-6">'
-        : '<img src="assets/ClosedStatus.png" class="w-6 h-6">';
+            ? '<img src="assets/Open-Status.png" class="w-6 h-6">'
+            : '<img src="assets/ClosedStatus.png" class="w-6 h-6">';
 
         card.innerHTML = `
 
@@ -150,26 +150,56 @@ async function searchIssue() {
 }
 
 
+// function openModal(issue) {
+
+//     document.getElementById("issueModal").classList.remove("hidden")
+
+//     document.getElementById("modalTitle").innerText = issue.title
+
+//     document.getElementById("modalDescription").innerText = issue.description
+
+//     document.getElementById("modalAuthor").innerText = "Author: " + issue.author
+
+//     document.getElementById("modalCategory").innerText = "Category: " + issue.category
+
+//     document.getElementById("modalPriority").innerText = "Priority: " + issue.priority
+
+// }
+
 function openModal(issue) {
 
     document.getElementById("issueModal").classList.remove("hidden")
 
     document.getElementById("modalTitle").innerText = issue.title
-
     document.getElementById("modalDescription").innerText = issue.description
 
-    document.getElementById("modalAuthor").innerText = "Author: " + issue.author
+    document.getElementById("modalAuthor").innerText ="Opened by " + issue.author + " • " + issue.createdAt
 
-    document.getElementById("modalCategory").innerText = "Category: " + issue.category
+    document.getElementById("modalCategory").innerText = issue.author
 
-    document.getElementById("modalPriority").innerText = "Priority: " + issue.priority
+    document.getElementById("modalPriority").innerHTML =
+        `<span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+${issue.priority.toUpperCase()}
+</span>`
+
+    const modalTags = document.getElementById("modalTags")
+
+    modalTags.innerHTML = `
+<span class="text-xs px-2 py-1 bg-red-100 text-red-500 rounded-full">
+BUG
+</span>
+
+<span class="text-xs px-2 py-1 bg-yellow-100 text-yellow-600 rounded-full">
+HELP WANTED
+</span>
+`
 
 }
 
 
 function closeModal() {
 
-    document.getElementById("issueModal").classList.add("hidden")
+    document.getElementById("issueModal").classList.add("hidden");
 
 }
 
