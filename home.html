@@ -31,16 +31,27 @@
 
     </div>
 
-    <div class="flex gap-4 p-6 w-[80%] mx-auto bg-white shadow-md ">
+   <div class="flex gap-4 p-6 w-[80%] mx-auto bg-white shadow-md">
 
-        <button onclick="loadIssues()" class="px-4 py-2 bg-purple-500 rounded text-gray-200 cursor-pointer">All</button>
+    <button id="allBtn"
+        onclick="setActive('all'); loadIssues()"
+        class="px-4 py-2 bg-purple-500 rounded text-white cursor-pointer">
+        All
+    </button>
 
-        <button onclick="filterIssues('open')" class="px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer">Open
-        </button>
+    <button id="openBtn"
+        onclick="setActive('open'); filterIssues('open')"
+        class="px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer">
+        Open
+    </button>
 
-        <button onclick="filterIssues('closed')" class="px-4 py-2 bg-gray-200  rounded text-gray-500 cursor-pointer">Closed</button>
+    <button id="closedBtn"
+        onclick="setActive('closed'); filterIssues('closed')"
+        class="px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer">
+        Closed
+    </button>
 
-    </div>
+</div>
 
     <div class="flex justify-between items-center bg-white p-6 shadow-md w-[80%] mx-auto">
         <div class="flex gap-2">

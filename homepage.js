@@ -1,8 +1,31 @@
+function setActive(type) {
+
+    const allBtn = document.getElementById("allBtn")
+    const openBtn = document.getElementById("openBtn")
+    const closedBtn = document.getElementById("closedBtn")
+
+    allBtn.className = "px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer"
+    openBtn.className = "px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer"
+    closedBtn.className = "px-4 py-2 bg-gray-200 rounded text-gray-500 cursor-pointer"
+
+    if (type === "all") {
+        allBtn.className = "px-4 py-2 bg-purple-500 rounded text-white cursor-pointer"
+    }
+
+    if (type === "open") {
+        openBtn.className = "px-4 py-2 bg-purple-500 rounded text-white cursor-pointer"
+    }
+
+    if (type === "closed") {
+        closedBtn.className = "px-4 py-2 bg-purple-500 rounded text-white cursor-pointer"
+    }
+
+}
+
+
 const api = "https://phi-lab-server.vercel.app/api/v1/lab/issues"
 
 let allIssues = []
-
-// Load Issues
 
 async function loadIssues() {
 
@@ -17,7 +40,6 @@ async function loadIssues() {
 
 }
 
-// Display Issues
 
 function displayIssues(issues) {
 
@@ -110,7 +132,6 @@ function filterIssues(status) {
 
 }
 
-// Search
 
 async function searchIssue() {
 
@@ -128,7 +149,6 @@ async function searchIssue() {
 
 }
 
-// Open Modal
 
 function openModal(issue) {
 
@@ -146,14 +166,11 @@ function openModal(issue) {
 
 }
 
-// Close Modal
 
 function closeModal() {
 
     document.getElementById("issueModal").classList.add("hidden")
 
 }
-
-// Initial Load
 
 loadIssues()
