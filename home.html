@@ -28,8 +28,7 @@
                 <input id="searchInput" class="border p-2 pl-10 rounded w-full" placeholder="Search issues">
             </div>
 
-            <button onclick="searchIssue()" class="bg-blue-500 text-white px-4 py-2 rounded"><i
-                    class="fa-solid fa-plus"></i>New Issue</button>
+            <button onclick="searchIssue()" class="bg-blue-500 text-white px-4 py-2 rounded"><i class="fa-solid fa-plus"></i>New Issue</button>
 
         </div>
 
@@ -74,7 +73,13 @@
 
     </div>
 
-    <div id="issuesContainer" class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 w-[80%] mx-auto "></div>
+    <div id="loader" class="hidden flex justify-center items-center py-10 w-[80%] mx-auto">
+         <div class="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+
+    <div id="issuesContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 w-[80%] mx-auto "></div>
+
 
     <div id="issueModal" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center">
 

@@ -1,3 +1,5 @@
+const api = "https://phi-lab-server.vercel.app/api/v1/lab/issues"
+
 function setActive(type) {
 
     const allBtn = document.getElementById("allBtn")
@@ -22,13 +24,19 @@ function setActive(type) {
 
 }
 
+function showLoader(){
+    document.getElementById("loader").classList.remove("hidden")
+}
 
-const api = "https://phi-lab-server.vercel.app/api/v1/lab/issues"
+function hideLoader(){
+    document.getElementById("loader").classList.add("hidden")
+}
 
 let allIssues = []
 
 async function loadIssues() {
 
+    showLoader();
     const res = await fetch(api)
     const data = await res.json()
 
@@ -38,8 +46,9 @@ async function loadIssues() {
 
     displayIssues(allIssues)
 
-}
+    hideLoader();
 
+}
 
 function displayIssues(issues) {
 
@@ -124,11 +133,19 @@ HELP WANTED
 
 function filterIssues(status) {
 
-    const filtered = allIssues.filter(issue => issue.status === status)
+    showLoader()
 
-    displayIssues(filtered)
+    setTimeout(() => {
 
-    document.getElementById("issueCount").innerText = filtered.length
+        const filtered = allIssues.filter(issue => issue.status === status)
+
+        displayIssues(filtered)
+
+        document.getElementById("issueCount").innerText = filtered.length
+
+        hideLoader()
+
+    }, 400)
 
 }
 
