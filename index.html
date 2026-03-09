@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body>
-    
+
+<body class="bg-gray-100 flex justify-center items-center h-screen w-11/12 pt-8 pb-8">
+
+    <div class="bg-white w-[520px] p-8 rounded-lg shadow space-y-4">
+        <div class="flex flex-col justify-center items-center space-y-4">
+            <img src="assets/github-logo.png" alt="">
+            <h1 class="text-[24px] font-bold mb-2">GitHub Issues Tracker</h1>
+            <p class="text-gray-500 mb-4">Sign in to manage your issues</p>
+        </div>
+
+        <label for="username" class="text-[16px] font-medium ">Username</label>
+        <input id="username" class="border p-2 w-full mb-3 rounded-sm" placeholder="Enter Username">
+        <p class="text-[14px] text-[#4A00FF]">Default: admin</p>
+
+        <label for="password" class="text-[16px] font-medium ">Password</label>
+        <input id="password" type="password" class="border p-2 w-full mb-3 rounded-sm" placeholder="Enter Password">
+        <p class="text-[14px] text-[#4A00FF]">Default: admin123</p>
+
+        <button onclick="login()" class="bg-[#4A00FF] text-white font-semibold w-full p-2 rounded cursor-pointer">
+            Sign In
+        </button>
+       
+        <div class="flex items-center my-6">
+            <div class="flex-grow border-t border-gray-400"></div>
+            <span class="mx-4 text-[18px]">OR</span>
+            <div class="flex-grow border-t border-gray-400"></div>
+        </div>
+
+        <div class="text-center mb-8">
+            <h3 class="text-[#64748B]">Demo Credentials:</h3>
+            <br>
+            <p><span class="font-semibold">Username:</span> admin</p>
+            <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+    </div>
 </body>
+
 </html>
